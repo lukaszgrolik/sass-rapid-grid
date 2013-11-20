@@ -1,15 +1,15 @@
-// 
+//
 // "PUBLIC"
-// 
+//
 
 $rapid-grid-row-class: null;
 $rapid-grid-col-class: null;
 $rapid-grid-row-list: null;
 
 @mixin rapid-grid($row-class, $col-class, $row-list) {
-  $rapid-grid-row-class: $row-class;
-  $rapid-grid-col-class: $col-class;
-  $rapid-grid-row-list: $row-list;
+  $rapid-grid-row-class: $row-class !global;
+  $rapid-grid-col-class: $col-class !global;
+  $rapid-grid-row-list: $row-list !global;
 
   @include init-rapid-grid;
   @include set-rows;
@@ -25,7 +25,7 @@ $rapid-grid-row-list: null;
 
     // set space for empty columns
     > .#{$rapid-grid-col-class} {
-      @include rapid-grid-generate-col-first;
+      // @include rapid-grid-generate-col-first;
 
       min-height: 1px;
     }
@@ -111,7 +111,9 @@ $rapid-grid-row-list: null;
 
 @mixin rapid-grid-calc-col-margin($gutter-width) {
   @if $gutter-width > 0 {
-    margin-left: $gutter-width;
+    & + .#{$rapid-grid-col-class} {
+      margin-left: $gutter-width;
+    }
   }
 }
 
