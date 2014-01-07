@@ -1,0 +1,11 @@
+@import '../../rapid-grid';
+
+@include rapid-grid(
+  'row', 'col',
+  (
+    row-1 3 0 320px,
+    row-2 3 0 480px,
+    gutters-1 3 2% 720px,
+    gutters-2 3 5% 1024px
+  )
+);

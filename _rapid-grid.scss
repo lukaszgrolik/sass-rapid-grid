@@ -1,0 +1,128 @@
+//
+// "PUBLIC"
+//
+
+$rapid-grid-row-class: null;
+$rapid-grid-col-class: null;
+$rapid-grid-row-list: null;
+
+@mixin rapid-grid($row-class, $col-class, $row-list) {
+  $rapid-grid-row-class: $row-class !global;
+  $rapid-grid-col-class: $col-class !global;
+  $rapid-grid-row-list: $row-list !global;
+
+  @include init-rapid-grid;
+  @include set-rows;
+}
+
+//
+// "PRIVATE"
+//
+
+@mixin init-rapid-grid {
+  .#{$rapid-grid-row-class} {
+    @include rapid-grid-clearfix;
+
+    // set space for empty columns
+    > .#{$rapid-grid-col-class} {
+      // @include rapid-grid-generate-col-first;
+
+      min-height: 1px;
+    }
+  }
+}
+
+@mixin set-rows {
+  // there are errors if $rapid-grid-row-list contains only one item -
+  // - sass doesn't handle nested single lists very well
+
+  // if $row-list contains single row definition
+  @if (type-of(nth($rapid-grid-row-list, 1)) != list) {
+    @include set-row($rapid-grid-row-list);
+
+  // if $row-list contains many row definitions
+  } @else {
+    @each $row in $rapid-grid-row-list {
+      @include set-row($row);
+    }
+  }
+}
+
+@mixin set-row($row) {
+  @if $row != null {
+    $row-name: nth($row, 1);
+    $row-n-columns: nth($row, 2);
+    $row-gutter-width: nth($row, 3);
+    $row-breakpoint: nth($row, 4);
+
+    @include rapid-grid-insert-media($row-breakpoint) {
+      .#{$row-name} > .#{$rapid-grid-col-class} {
+        @include rapid-grid-generate-col;
+        @include rapid-grid-calc-col-margin($row-gutter-width);
+      }
+
+      $width-list: ();
+
+      @for $y from 1 through $row-n-columns {
+        @for $x from 1 through $y {
+          $width: $x / $y;
+
+          @if index($width-list, $width) == false {
+            $width-list: append($width-list, $width);
+
+            .#{$row-name} > .#{$rapid-grid-col-class}-#{$x}-#{$y} {
+              @include rapid-grid-calc-col-width($x, $y, $row-gutter-width);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// micro clearfix
+@mixin rapid-grid-clearfix {
+  *zoom: 1;
+
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin rapid-grid-generate-col {
+  float: left;
+}
+
+@mixin rapid-grid-generate-col-first {
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+@mixin rapid-grid-calc-col-width($span, $n-columns, $gutter-width) {
+  width: $span / $n-columns * (100% - ($n-columns / $span - 1) * $gutter-width);
+}
+
+@mixin rapid-grid-calc-col-margin($gutter-width) {
+  @if $gutter-width > 0 {
+    & + .#{$rapid-grid-col-class} {
+      margin-left: $gutter-width;
+    }
+  }
+}
+
+@mixin rapid-grid-insert-media($breakpoint) {
+  @if $breakpoint > 0 {
+    @media (min-width: #{$breakpoint}) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}

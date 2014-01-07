@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>sass-grid</title>
+
+  <link rel="stylesheet" href="css/main.css">
+
+  <style>
+  html {
+    background: #fff;
+  }
+
+  body {
+    background: grey;
+    max-width: 720px;
+    margin: 50px auto;
+  }
+
+  .col-height-toggle-button {
+    position: fixed;
+    top: 1em;
+    right: 1em;
+  }
+  </style>
+
+  <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+  <![endif]-->
+
+  <script src="js/vendor/jquery.syncHeight.min.js"></script>
+  <script src="js/main.js"></script>
+  
+</head>
+<body>
+
+  <button class="col-height-toggle-button">Toggle columns heights</button>
+  
+  <div class="row row-1">
+    <div class="col col-1-1" style="background: coral">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+  </div>
+
+  <div class="row row-1">
+    <div class="col col-1-2" style="background: khaki">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+    <div class="col col-1-2" style="background: yellowgreen;">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+  </div>
+
+  <div class="row row-2">
+    <div class="col col-1-2" style="background: khaki">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+    <div class="col col-1-2" style="background: yellowgreen;">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+  </div>
+
+  <div class="row gutters-1">
+    <div class="col col-1-2" style="background: khaki">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+    <div class="col col-1-2" style="background: yellowgreen;">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+  </div>
+
+  <div class="row gutters-2">
+    <div class="col col-1-2" style="background: khaki">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+    <div class="col col-1-2" style="background: yellowgreen;">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+  </div>
+
+  <div class="row row-1">
+    <div class="col col-1-3" style="background: dodgerblue">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+    <div class="col col-1-3" style="background: tomato">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum,e deserunt.</div>
+    <div class="col col-1-3" style="background: cyan">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+  </div>
+
+  <div class="row row-2">
+    <div class="col col-1-3" style="background: dodgerblue">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+    <div class="col col-1-3" style="background: tomato">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum,e deserunt.</div>
+    <div class="col col-1-3" style="background: cyan">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+  </div>
+
+  <div class="row gutters-1">
+    <div class="col col-1-3" style="background: dodgerblue">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+    <div class="col col-1-3" style="background: tomato">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum,e deserunt.</div>
+    <div class="col col-1-3" style="background: cyan">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+  </div>
+
+  <div class="row gutters-2">
+    <div class="col col-1-3" style="background: dodgerblue">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+    <div class="col col-1-3" style="background: tomato">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum,e deserunt.</div>
+    <div class="col col-1-3" style="background: cyan">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+  </div>
+
+  <div class="row row-1">
+    <div class="col col-1-3" style="background: darkkhaki">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+    <div class="col col-2-3" style="background: seagreen">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, o?</div>
+  </div>
+
+  <div class="row row-2">
+    <div class="col col-1-3" style="background: darkkhaki">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+    <div class="col col-2-3" style="background: seagreen">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, o?</div>
+  </div>
+
+  <div class="row gutters-1">
+    <div class="col col-1-3" style="background: darkkhaki">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+    <div class="col col-2-3" style="background: seagreen">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, o?</div>
+  </div>
+
+  <div class="row gutters-2">
+    <div class="col col-1-3" style="background: darkkhaki">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+    <div class="col col-2-3" style="background: seagreen">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, o?</div>
+  </div>
+
+  <div class="row row-1">
+    <div class="col col-2-3" style="background: darkkhaki">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+    <div class="col col-1-3" style="background: seagreen">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, o?</div>
+  </div>
+
+  <div class="row row-2">
+    <div class="col col-2-3" style="background: darkkhaki">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+    <div class="col col-1-3" style="background: seagreen">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, o?</div>
+  </div>
+
+  <div class="row gutters-1">
+    <div class="col col-2-3" style="background: darkkhaki">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+    <div class="col col-1-3" style="background: seagreen">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, o?</div>
+  </div>
+
+  <div class="row gutters-2">
+    <div class="col col-2-3" style="background: darkkhaki">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+    <div class="col col-1-3" style="background: seagreen">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, o?</div>
+  </div>
+
+  <div class="row row-1">
+    <div class="col col-1-2"></div>
+    <div class="col col-1-2" style="background: yellowgreen">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+  </div>
+
+  <div class="row row-1">
+    <div class="col col-1-3"></div>
+    <div class="col col-1-3" style="background: tomato">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum,e deserunt.</div>
+    <div class="col col-1-3"></div>
+  </div>
+
+  <div class="row row-1">
+    <div class="col col-1-3"></div>
+    <div class="col col-2-3" style="background: seagreen">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+  </div>
+
+  <div class="row row-1">
+    <div class="col col-1-2" style="background: khaki">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+    <div class="col col-1-2" style="background: yellowgreen">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+  </div>
+
+  <div class="row row-1">
+    <div class="col col-1-2" style="background: darkorange">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+    <div class="col col-1-2" style="background: forestgreen">
+      <div class="row row-1">
+        <div class="col col-1-2" style="background: khaki">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+        <div class="col col-1-2" style="background: pink">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row row-1">
+    <div class="col col-1-2" style="background: khaki">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+    <div class="col col-1-2" style="background: yellowgreen">
+        <div class="row row-1">
+          <div class="col col-1-3" style="background: dodgerblue">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+          <div class="col col-1-3" style="background: tomato">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum,e deserunt.</div>
+          <div class="col col-1-3" style="background: cyan">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+        </div>
+    </div>
+  </div>
+
+  <!-- gutters -->
+
+  <div class="row gutters-1">
+    <div class="col col-1-1" style="background: coral">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+  </div>
+
+  <div class="row gutters-1">
+    <div class="col col-1-2" style="background: khaki">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+    <div class="col col-1-2" style="background: yellowgreen">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+  </div>
+
+  <div class="row gutters-1">
+    <div class="col col-1-3" style="background: dodgerblue">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+    <div class="col col-1-3" style="background: tomato">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum,e deserunt.</div>
+    <div class="col col-1-3" style="background: cyan">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+  </div>
+
+  <div class="row gutters-2">
+    <div class="col col-1-3" style="background: darkkhaki">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+    <div class="col col-2-3" style="background: seagreen">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, o?</div>
+  </div>
+
+  <div class="row gutters-1">
+    <div class="col col-1-2"></div>
+    <div class="col col-1-2" style="background: yellowgreen">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+  </div>
+
+  <div class="row gutters-1">
+    <div class="col col-1-3"></div>
+    <div class="col col-1-3" style="background: tomato">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum,e deserunt.</div>
+    <div class="col col-1-3"></div>
+  </div>
+
+  <div class="row gutters-1">
+    <div class="col col-1-3"></div>
+    <div class="col col-2-3" style="background: seagreen">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+  </div>
+
+  <div class="row gutters-1">
+    <div class="col col-1-2" style="background: khaki">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+    <div class="col col-1-2" style="background: yellowgreen">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+  </div>
+
+  <div class="row gutters-1">
+    <div class="col col-1-2" style="background: darkorange">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+    <div class="col col-1-2" style="background: forestgreen">
+      <div class="row row-1">
+        <div class="col col-1-2" style="background: khaki">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+        <div class="col col-1-2" style="background: pink">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row gutters-1">
+    <div class="col col-1-2" style="background: khaki">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+    <div class="col col-1-2" style="background: yellowgreen">
+        <div class="row gutters-2">
+          <div class="col col-1-3" style="background: dodgerblue">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+          <div class="col col-1-3" style="background: tomato">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum,e deserunt.</div>
+          <div class="col col-1-3" style="background: cyan">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+        </div>
+    </div>
+  </div>
+
+</body>
+</html>
