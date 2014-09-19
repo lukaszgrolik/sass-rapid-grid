@@ -1,6 +1,5 @@
 # Sass-rapid-grid
 
-
 Sass-rapid-grid, based on [Sass](https://github.com/nex3/sass), is another approach to creating CSS grids.
 
 ### Features:
@@ -12,22 +11,27 @@ Sass-rapid-grid, based on [Sass](https://github.com/nex3/sass), is another appro
 
 Sass 3.2.0+
 
+## Installation
+
+### Bower
+
+- Terminal: `bower install sass-rapid-grid`
+- SCSS: `@import 'path/to/bower_components/sass-rapid-grid/rapid-grid';`
+
+### Vanilla Sass
+
+- Copy `_rapid-grid.scss` into your project
+- SCSS: `@import 'path/to/rapid-grid';`
+
 ## Getting started
 
-1. Download & put the `_rapid-grid.scss` partial wherever you want in your project.
-2. Import:
-
-   ```scss
-   @import 'path/to/rapid-grid';
-   ```
-
-3. Init:
+1. Init:
 
    ```scss
    @include rapid-grid(row, col, (row-1 3 5% 720px));
    ```
 
-4. Use generated HTML classes:
+2. Use generated HTML classes:
 
    ```html
    <div class="row row-1">
@@ -35,7 +39,7 @@ Sass 3.2.0+
       <div class="col col-2-3"><!-- ... --></div>
    </div>
    ```
-   
+
 ## More advanced example
 
 ```scss
@@ -93,17 +97,11 @@ Sass 3.2.0+
 - `row-name` - *string* - specific rows' class name
 - `number-of-columns` - *number* (unitless) - maximum number of available columns
 - `gutter-width` - *number* (percentages only)
-- `breakpoint-width` - *number* - a width below which columns are positioned one below another 
-
-## About project
-
-Project leverages [Semantic Versioning](http://semver.org/).
+- `breakpoint-width` - *number* - a width below which columns are positioned one below another
 
 ## License
 
 Sass-rapid-grid is released under the MIT License.
-
-Copyright 2013-2014 [Łukasz Grolik](https://github.com/lukaszgrolik)
 
 ```
 Permission is hereby granted, free of charge, to any person obtaining
