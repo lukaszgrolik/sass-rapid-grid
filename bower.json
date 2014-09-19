@@ -1,0 +1,8 @@
+{
+  "name": "sass-rapid-grid",
+  "version": "0.1.1",
+  "main": "_rapid-grid.scss",
+  "description": "Another approach to CSS grids",
+  "keywords": ["css-grid", "sass-grid", "sass-rapid-grid", "grid-system", "grid"],
+  "license": "MIT"
+}
