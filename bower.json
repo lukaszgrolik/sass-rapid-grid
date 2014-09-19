@@ -1,6 +1,6 @@
 {
   "name": "sass-rapid-grid",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "_rapid-grid.scss",
   "description": "Another approach to CSS grids",
   "keywords": ["css-grid", "sass-grid", "sass-rapid-grid", "grid-system", "grid"],
